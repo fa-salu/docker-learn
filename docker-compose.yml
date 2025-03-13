@@ -10,9 +10,8 @@ services:
       - /app/node_modules
     depends_on:
       - mongodb
-    environment:
-      - MONGODB_URI=mongodb://mongodb:27017/postapp
-      - PORT=5000
+    env_file:
+      - .env
     restart: unless-stopped
 
   mongodb:
